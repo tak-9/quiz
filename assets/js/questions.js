@@ -81,7 +81,7 @@ function verifyAnswer() {
         // Answer is correct
         resultEl.innerHTML = "<div class=\"line\"></div> <div class=\"correct\">Correct!</div>";
         // sleep 1 sec, then call goToNextQuestion()
-        setTimeout(function() {
+        setTimeout(function () {
             goToNextQuestion();
         }, 1000);
     } else {
@@ -129,13 +129,24 @@ function displayFinalScore() {
     var allDoneText = "<h1>All done!</h1>" +
         "Your final score is " + secondsLeft + "<br>" +
         "Enter initals: <input type=\"text\" id=\"initial\">" +
-        "<input type=\"submit\" id=\"submit\" value=\"submit\" class=\"button\" style=\"margin-left: 10px;\">" ;
+        "<input type=\"submit\" id=\"submit\" value=\"submit\" class=\"button\" style=\"margin-left: 10px;\">";
     document.getElementById("quizContainer").innerHTML = allDoneText;
     stopTimer();
-    document.getElementById("submit").addEventListener("click",processSubmit)
+    // AddEventListener for Submit button
+    document.getElementById("submit").addEventListener("click", processSubmit);
+    // AddEventListener for pressing Enter key in textbox
+    document.getElementById("initial").addEventListener("keyup", function (event) {
+        //console.log(event);
+        if (event.keyCode === 13) {
+            // 13 is Enter key
+            processSubmit();
+        }
+    }
+    );
 }
 
-function processSubmit(){ 
+
+function processSubmit() {
     console.log("processSubmit()");
     var submitEl = document.getElementById("submit");
     //console.log(submitEl);
@@ -156,19 +167,19 @@ function processSubmit(){
     console.log("existingScores: ", existingScores);
     console.log("existingScores typeof: ", typeof existingScores);
 
-    newScoreJSON = {"initial": initalStr, "score": secondsLeft};
-    
+    newScoreJSON = { "initial": initalStr, "score": secondsLeft };
+
     // ????? I don't understand why you need to check null here!    
-    if (existingScores == null){
+    if (existingScores == null) {
         newScores[0] = newScoreJSON;
         localStorage.setItem("scores", JSON.stringify(newScores));
     } else {
         existingScores.push(newScoreJSON);
         localStorage.setItem("scores", JSON.stringify(existingScores));
-    } 
+    }
 
     //console.log(newScores);
-    
+
     // Open the Highscores page.
-    location.href="highscores.html";
+    location.href = "highscores.html";
 }
