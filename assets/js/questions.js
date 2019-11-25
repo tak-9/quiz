@@ -169,9 +169,9 @@ function processSubmit() {
 
     newScoreJSON = { "initial": initalStr, "score": secondsLeft };
 
-    // ????? I don't understand why you need to check null here!    
+    // check null. You cannot push to existingScores if it's null. 
     if (existingScores == null) {
-        newScores[0] = newScoreJSON;
+        newScores.push(newScoreJSON);
         localStorage.setItem("scores", JSON.stringify(newScores));
     } else {
         existingScores.push(newScoreJSON);
