@@ -27,6 +27,14 @@ header {
     margin: auto;
 }
 
+@media only screen and (max-width: 600px) {
+    #quizContainer {
+        padding-top: 20px;
+        width: 90%; 
+        margin: auto;
+    }    
+}
+
 .button{
     border: 0 none;
     padding: 10px 20px 10px 20px;
