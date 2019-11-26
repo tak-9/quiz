@@ -15,6 +15,12 @@ https://tak-9.github.io/week4/
 5. Highscores is displayed. 
 6. You can click "Go Back" to go back to the first page or "Clear Highscores" to clear records.
 
+
+## Credit 
+Added audio when correct or incorrect answer is made. Also, the result page plays sound at the end.  
+Sound is distributed under create commons license by OtoLogic. <img src=cc.png>
+https://otologic.jp/free/se/quiz01.html
+
 ## Screen Capture 
 
 <img src="screen_capture.png">
