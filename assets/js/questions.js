@@ -79,6 +79,10 @@ function verifyAnswer() {
     // Display result.
     if (selectedAnswer === expectedAnswer) {
         // Answer is correct
+        // Play sound
+        var correctSound = new Audio("./assets/sound/Quiz-Correct_Answer01-1.mp3");
+        correctSound.play();
+        // Display result
         resultEl.innerHTML = "<div class=\"line\"></div> <div class=\"correct\">Correct!</div>";
         // sleep 1 sec, then call goToNextQuestion()
         setTimeout(function () {
@@ -87,6 +91,8 @@ function verifyAnswer() {
     } else {
         // Answer is wrong
         resultEl.innerHTML = "<div class=\"line\"></div> <div class=\"wrong\">Wrong!</div>";
+        var wrongSound = new Audio("./assets/sound/Quiz-Wrong_Buzzer01-1.mp3");
+        wrongSound.play();
         penalty();
     }
 }
@@ -120,6 +126,10 @@ function clearScreen() {
 }
 
 function displayFinalScore() {
+    var resultSound = new Audio("./assets/sound/Quiz-Results02-1.mp3");
+    resultSound.play();
+
+
     // If time is negative value, reset to the time to 0 
     if (secondsLeft < 0) {
         secondsLeft = 0;
