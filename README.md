@@ -17,6 +17,9 @@ https://tak-9.github.io/week4/
 
 This page uses cookie, please ensure your browser suports it. 
 
+Please note Protofolio page has been updated.
+https://tak-9.github.io/portfolio.html
+
 ## Credit 
 Added audio when correct or incorrect answer is made. Also, the result page plays sound at the end.  
 Sound is distributed under create commons license by OtoLogic. https://otologic.jp/free/se/quiz01.html<br>
@@ -24,4 +27,4 @@ Sound is distributed under create commons license by OtoLogic. https://otologic.
 
 ## Screen Capture 
 
-<img src="screen_capture.png" width="100px">
+<img src="screen_capture.png" width="500px">
