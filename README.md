@@ -8,19 +8,20 @@ The game ends when the time becomes 0 or you have answered all questions.
 
 1. Open the URL. 
 https://tak-9.github.io/week4/
-2. Click Start Quiz button.
+2. Click Start Quiz button. Choose the quiz you want to take. 
 3. Answer each questions accordingly. 
 4. "All done!" is displayed when you finish all questions or your time is over. 
    Enter initals and click "Submit". 
-5. Highscores is displayed. 
+5. Highscores is displayed. Chose the type of quiz from dropdown list. 
 6. You can click "Go Back" to go back to the first page or "Clear Highscores" to clear records.
 
+This page uses cookie, please ensure your browser suports it. 
 
 ## Credit 
 Added audio when correct or incorrect answer is made. Also, the result page plays sound at the end.  
-Sound is distributed under create commons license by OtoLogic. <img src=cc.png>
-https://otologic.jp/free/se/quiz01.html
+Sound is distributed under create commons license by OtoLogic. https://otologic.jp/free/se/quiz01.html<br>
+<img src=cc.png>
 
 ## Screen Capture 
 
-<img src="screen_capture.png">
+<img src="screen_capture.png" width="100px">
