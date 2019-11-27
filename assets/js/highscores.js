@@ -60,7 +60,16 @@ function clearTable() {
 }
 
 var removeHighscores = function() {
-    localStorage.removeItem("scores");
+    var quizType = document.getElementById("quizType").value;
+    var localStorageKey = "";
+
+    if (quizType === "jsQuiz") {
+        localStorageKey = "jsScores";
+    } else if (quizType === "htmlQuiz") {
+        localStorageKey = "htmlScores";
+    }
+
+    localStorage.removeItem(localStorageKey);
     var st = document.getElementById("scoreTable");
     //console.log(st);
     st.parentNode.removeChild(st);
