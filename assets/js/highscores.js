@@ -1,9 +1,31 @@
 
+setDropDown();
 createTable();
 
+function setDropDown() {
+    var selectedQuiz = getCookie("selectedQuiz");
+    console.log("selectedQuiz: " + selectedQuiz);
+    document.getElementById("quizType").value = selectedQuiz;
+}
+
 function createTable() {
+    console.log("createTable");
+    clearTable();
+
+    var quizType = document.getElementById("quizType").value;
+    var localStorageKey = "";
+
+    //console.log("quizType:" + quizType);
+
+    if (quizType === "jsQuiz") {
+        localStorageKey = "jsScores";
+    } else if (quizType === "htmlQuiz") {
+        localStorageKey = "htmlScores";
+    }
+    //console.log("localStorageKey:" + localStorageKey);
+
     // 'valuesArr' is array of JSON objects {"initial": "xx", "score": 15}
-    var valuesArr = JSON.parse(localStorage.getItem("scores"));
+    var valuesArr = JSON.parse(localStorage.getItem(localStorageKey));
     // console.log("values: ", values);
 
     // If valuesArr is empty, it is not necessary to create table.
@@ -30,11 +52,17 @@ function createTable() {
     }
 }
 
+function clearTable() {
+    var scoreTable = document.getElementById("scoreTable");
+    if (scoreTable != null) {
+        scoreTable.parentElement.removeChild(scoreTable);
+    }
+}
 
 var removeHighscores = function() {
     localStorage.removeItem("scores");
     var st = document.getElementById("scoreTable");
-    console.log(st);
+    //console.log(st);
     st.parentNode.removeChild(st);
     createTable();
 }

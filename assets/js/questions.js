@@ -1,4 +1,7 @@
-var questions = [
+var selectedQuiz = getCookie("selectedQuiz");
+console.log(selectedQuiz);
+
+var javascriptQuestions = [
     {
         title: "Commonly used data types DO NOT include:",
         choices: ["strings", "booleans", "alerts", "numbers"],
@@ -11,6 +14,33 @@ var questions = [
     },
     ///etc.
 ];
+
+var htmlQuestions = [
+    {
+        title: "HTML stands for?",
+        choices: ["Hyper Text Markup Language", "High Text Markup Language", "Hyper Tabular Markup Language", "None of these"],
+        answer: "Hyper Text Markup Language"
+    },
+    {
+        title: "Which of the following tag is used to mark a begining of paragraph ?",
+        choices: ["<TD>", "<br>", "<P>", "<TR>"],
+        answer: "<P>"
+    },
+    {
+        title: "Correct HTML tag for the largest heading is",
+        choices: ["<head>", "<h6>", "<heading>", "<h1>"],
+        answer: "<h1>"
+    }
+];
+
+if (selectedQuiz == "jsQuiz") {
+    var questions = javascriptQuestions;
+} else if (selectedQuiz == "htmlQuiz") {
+    var questions = htmlQuestions;
+} else {
+    var questions = htmlQuestions;
+    alert('cookie not working!!!');
+}
 
 var question_titleEl = document.getElementById("question_title");
 var resultEl = document.getElementById("result");
@@ -172,7 +202,17 @@ function processSubmit() {
     var initalsAndScore = new Array();
     var existingScores = new Array();
     var newScores = new Array();
-    existingScores = JSON.parse(localStorage.getItem("scores"));
+
+    var localStorageKey = "";
+    if (selectedQuiz === "jsQuiz") {
+        localStorageKey = "jsScores";
+    } else if (selectedQuiz === "htmlQuiz") {
+        localStorageKey = "htmlScores";
+    } else {
+        localStorageKey = "htmlScores";
+    }
+
+    existingScores = JSON.parse(localStorage.getItem(localStorageKey));
 
     console.log("existingScores: ", existingScores);
     console.log("existingScores typeof: ", typeof existingScores);
@@ -182,10 +222,10 @@ function processSubmit() {
     // check null. You cannot push to existingScores if it's null. 
     if (existingScores == null) {
         newScores.push(newScoreJSON);
-        localStorage.setItem("scores", JSON.stringify(newScores));
+        localStorage.setItem(localStorageKey, JSON.stringify(newScores));
     } else {
         existingScores.push(newScoreJSON);
-        localStorage.setItem("scores", JSON.stringify(existingScores));
+        localStorage.setItem(localStorageKey, JSON.stringify(existingScores));
     }
 
     //console.log(newScores);

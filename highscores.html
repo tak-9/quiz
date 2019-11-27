@@ -9,8 +9,18 @@
 </head>
 
 <body>
+    <header>
+        <div id="linkViewHighscores"><a href="index.html">Coding Quiz</a></div>
+    </header>
     <div id="quizContainer">
         <h1>Highscores</h1>
+
+        <select id="quizType" onchange="createTable()">
+            <option value="jsQuiz">JavaScript Quiz</option>
+            <option value="htmlQuiz">HTML Quiz</option>
+        </select>
+
+        <div style="height: 10px;"></div>
         <span id="scoreTableSpan"></span>
         <div style="height: 1px; margin-top: 14px;">
             <a href="index.html"><input type="button" name="goBack" value="Go Back" class="button"
@@ -19,5 +29,7 @@
         </div>
     </div>
 </body>
+<script src="./assets/js/util.js"></script>
 <script src="./assets/js/highscores.js"></script>
+
 </html>

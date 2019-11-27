@@ -32,7 +32,7 @@ header {
 }
 
 #quizContainer {
-    padding-top: 30px;
+    padding-top: 20px;
     width: 700px; 
     margin: auto;
 }
@@ -59,6 +59,12 @@ header {
     margin: 20px 0px 20px 0px;
     display: block;
     left: 0px;
+
+}
+
+.indexPageButton{ 
+    margin: 15px auto 15px auto;
+    display: block;
 }
 
 .line { 

@@ -14,17 +14,28 @@
         <div id="linkViewHighscores"><a href="highscores.html">View Highscores</a></div>
         <div id="time">Time: 0</div>
     </header>
-    <div class="quizContainer" style="text-align: center;">
+    <div style="text-align: center;" id="quizContainer">
         <h1>Coding Quiz Challenge</h1>
-        Try to answer the following code-related questions within the time limit.
-        Keep in mind that incorrect answers will penalize your score time by fifteen seconds!<br>
-        <div style="height: 20px; margin-top: 30px;">
-
-            <a href="quiz.html">
-                <input type="button" name="start" value="Start Quiz" class="button"></a>
-        </div>
+        Try to answer the following code-related questions within the time limit.<br>
+        Keep in mind that incorrect answers will penalize your score time by 10 seconds!<br>
+        <div style="height: 10px;"></div>
+        <a href="quiz.html">
+            <input type="button" name="start" value="Start Javascript Quiz" class="button indexPageButton" id="js" onclick="jsbutton()"></a>
+        <a href="quiz.html">
+        <input type="button" name="start" value="Start HTML Quiz" class="button indexPageButton" id="hm" onclick="htmlbutton()"></a>
     </div>
 </body>
-</script>
+<script>
+function jsbutton(){
+    // set quiz type to cookie
+    // When this file is on local drive, Chrome does not save cookie. Use other browsers such as Firefox. 
+    // https://stackoverflow.com/questions/8602833/where-are-cookies-saved-for-a-local-html-file
+    document.cookie = "selectedQuiz=jsQuiz"; 
+}
 
+function htmlbutton(){
+    // set quiz type to cookie
+    document.cookie = "selectedQuiz=htmlQuiz";
+}
+</script>
 </html>
