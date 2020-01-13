@@ -7,7 +7,7 @@ You will have ( 15sec * Number of Questions ) for the quiz. Your score will be c
 The game ends when the time becomes 0 or you have answered all questions. 
 
 1. Open the URL. 
-https://tak-9.github.io/week4/
+https://tak-9.github.io/quiz/
 2. Click Start Quiz button. Choose the quiz you want to take. 
 3. Answer each questions accordingly. The browser will play sound accordinly when it is correct or wrong.  
 4. "All done!" is displayed when you finish all questions or your time is over. 
