@@ -1,4 +1,4 @@
-# Code Quiz 
+# Code Quiz  	:100:
 This is an on-line quiz for Javascript. The application asks multiple questions and you need to answer the question within the specified time frame. 
 
 ## Live demo
